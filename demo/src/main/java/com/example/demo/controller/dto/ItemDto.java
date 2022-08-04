@@ -1,15 +1,7 @@
-package com.example.demo.repository.entity;
+package com.example.demo.controller.dto;
 
-import com.example.demo.controller.dto.ItemDto;
-
-import javax.persistence.*;
-
-@Entity
-public class Suit
+public class ItemDto
 {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
 
     private String name;
 
@@ -17,24 +9,11 @@ public class Suit
 
     private String imageUrl;
 
-    public Suit (){
-
-    }
-
-    public Suit(ItemDto itemDto) {
-        this.name = itemDto.getName();
-        this.description = itemDto.getDescription();
-        this.imageUrl = itemDto.getImageUrl();
-    }
-
-    public Integer getId()
+    public ItemDto( String name, String description, String imageUrl )
     {
-        return id;
-    }
-
-    public void setId( Integer id )
-    {
-        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.imageUrl = imageUrl;
     }
 
     public String getName()
